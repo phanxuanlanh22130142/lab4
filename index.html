@@ -79,13 +79,13 @@
 
         .container .button {
     display: inline-block;
-    padding: 15px 30px; /* Increase the padding to make the button larger */
+    padding: 15px 30px; 
     background-color: #555;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-    font-size: 20px; /* Increase the font size for better visibility */
+    font-size: 20px; 
 }
 
         .container .button:hover {
@@ -133,8 +133,8 @@
             background-color: #eaeaea;
         }
         .box .text {
-    color: blue; /* Thay đổi màu chữ thành màu xanh dương */
-    font-size: 20px; /* Thay đổi kích thước font chữ thành 20 điểm */
+    color: blue; 
+    font-size: 20px; 
 }
 
        
@@ -144,7 +144,7 @@
             margin-top: 10px;
         }
 
-        /* Additional code */
+     
 
         @media (max-width: 768px) {
             .container {
@@ -171,7 +171,7 @@
   background-color: #f1f1f1;
 }
 
-/* Style the buttons inside the tab */
+
 .tab a {
   float: left;
   display: block;
@@ -182,29 +182,29 @@
   transition: 0.3s;
 }
 
-/* Change background color of tabs on hover */
+
 .tab a:hover {
   background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
+
 .tab a.active {
   background-color: #ccc;
 }
 
-/* Style the tab content */
+
 .tabcontent {
   
   
   
-  width: calc(100% - 60px); /* Calculate the width to be 100% minus the total horizontal padding (2 * 30px) */
+  width: calc(100% - 60px); 
 
   display: none;
   padding: 30px;
   border: 1px solid #ccc;
   border-top: none;
- /* Điều chỉnh chiều rộng của nội dung */
-  margin: 0 auto; /* Để căn giữa nội dung */
+ 
+  margin: 0 auto; 
 }
 .center-menu {
   text-align: center;
@@ -230,12 +230,12 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 30px; /* Điều chỉnh kích thước padding ở đây */
+  padding: 30px; 
   transition: 0.3s;
 }
 .tablinks {
   font-size: 40px;
-  color:gold; /* Replace "20px" with your desired font size */
+  color:gold; 
   display: flex;
   justify-content: center;
 }
@@ -263,6 +263,8 @@
               <button class="tablinks" onclick="openNestedTab(event, 'requirement')">Requirement</button>
               <button class="tablinks" onclick="openNestedTab(event, 'design')">Design</button>
               <button class="tablinks" onclick="redirectToImplement()(event, 'implement')">Implement</button>
+              <button class="tablinks" onclick="redirectToLab6()(event, 'lab6')">Lab6</button>
+             
             </div>
           </div>
           <div class="center-content">
@@ -277,19 +279,19 @@
           
             <div id="design" class="tabcontent">
               <h3>Design</h3>
-              
               <div class="box">
-                <img src="images/A1.jpg" alt="thiết kế trên giây">
-                <button class="downloadButton" onclick="downloadImage('images/A1.jpg')">Download</button>
+                <img src="images/A1.jpg" alt="Hình ảnh 1">
+                <a href="images/A1.jpg" download="images/A1.jpg">Download</a>
               </div>
               
               <div class="box">
-                <img src="images/B.jpg" alt="hình Implement">
-                <button class="downloadButton" onclick="downloadImage('images/B.jpg')">Download</button>
+                <img src="images/B.jpg" alt="Image 2">
+                <a href="images/B.jpg" download="images/B.jpg">Download</a>
               </div>
               
-  <a href="https://www.figma.com">Go To FigMa</a>
+  <a href="https://www.figma.com/file/n0RQO9y151M7eRSZ46J99N/Untitled?type=design&node-id=1%3A2&mode=design&t=qgf6tmQJoVX8ZVLn-1">Go To FigMa</a>
             </div>
+           
             
           </div></p>
           
@@ -334,7 +336,7 @@
         
         <script>
        
-  function openTab(evt, tabName) {
+       function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -351,24 +353,19 @@ function openNestedTab(evt, nestedTabName) {
   }
   document.getElementById(nestedTabName).style.display = "block";
 }
-function redirectToImplement(evt, implementTabName) {
-    openTab(implementTabName);
 
-  }
-  function redirectToImplement() {
-    window.location.href = "Implement.html";
+function redirectToImplement() {
+  window.location.href = "Implement.html";
 }
+
+function redirectToLab6() {
+  window.location.href = "Lab6.html";
+}
+
 function redirectToAbout() {
-                window.location.href = "about.html";
-            }
-            function downloadImage(imageUrl) {
-  var link = document.createElement('a');
-  link.href = imageUrl;
-  link.download = 'image.jpg';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  window.location.href = "about.html";
 }
+       
         </script>
         <a href="#" class="button" onclick="redirectToAbout()">About</a>
         
