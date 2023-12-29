@@ -21,6 +21,8 @@
             border-radius: 5px;
             overflow: hidden;
             border: 2px outset #333;
+            padding: 0px;
+            
         }
 
         .container::before {
@@ -166,20 +168,21 @@
             }
         }
         .tab {
-  overflow: hidden;
+
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  overflow-x: auto;
 }
 
 
 .tab a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 30px 36px;
-  text-decoration: none;
-  transition: 0.3s;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 15px 20px; /* Giảm giá trị padding theo ý muốn */
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 
@@ -225,13 +228,13 @@
   text-align: center;
 }
 .tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 30px; 
-  transition: 0.3s;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px; /* Giảm giá trị padding theo ý muốn */
+    transition: 0.3s;
 }
 .tablinks {
   font-size: 40px;
@@ -263,7 +266,9 @@
               <button class="tablinks" onclick="openNestedTab(event, 'requirement')">Requirement</button>
               <button class="tablinks" onclick="openNestedTab(event, 'design')">Design</button>
               <button class="tablinks" onclick="redirectToImplement()(event, 'implement')">Implement</button>
+              <button class="tablinks" onclick="redirectToLab5()(event, 'lab5')">Lab5</button>
               <button class="tablinks" onclick="redirectToLab6()(event, 'lab6')">Lab6</button>
+              <button class="tablinks" onclick="redirectToLab7()(event, 'lab7')">Lab7</button>
              
             </div>
           </div>
@@ -357,11 +362,15 @@ function openNestedTab(evt, nestedTabName) {
 function redirectToImplement() {
   window.location.href = "Implement.html";
 }
-
+function redirectToLab5() {
+  window.location.href = "lab5.html";
+}
 function redirectToLab6() {
   window.location.href = "Lab6.html";
 }
-
+function redirectToLab7() {
+  window.location.href = "lab7.html";
+}
 function redirectToAbout() {
   window.location.href = "about.html";
 }
