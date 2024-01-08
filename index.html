@@ -14,7 +14,7 @@
 
         .container {
             width: 80%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             background-color: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -53,17 +53,9 @@
             padding: 40px;
         }
 
-        .container h1 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 20px;
-        }
+       
 
-        .container p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
+        
 
         .container a {
             display: inline-block;
@@ -100,13 +92,14 @@
 
 .container h1 {
     color: red; 
-    font-size: 40px; 
+    font-size: 60px; 
 }
 
 .container p {
-    color:aqua; 
-    font-size: 18px; 
-}
+            font-size: 35px;
+            color:aqua;
+            
+        }
 
         .box {
     margin-bottom: 20px;
@@ -180,7 +173,7 @@
     display: block;
     color: black;
     text-align: center;
-    padding: 15px 20px; /* Giảm giá trị padding theo ý muốn */
+    padding: 15px 20px;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -195,26 +188,17 @@
   background-color: #ccc;
 }
 
-
 .tabcontent {
-  
-  
-  
-  width: calc(100% - 60px); 
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 60px);
+    display: none;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin: 0 auto;
+}
 
-  display: none;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-top: none;
- 
-  margin: 0 auto; 
-}
-.center-menu {
-  text-align: center;
-  margin-top: 20px;
-  width: 50%;
-  font-size: 40px;
-}
 
 .center-menu a {
   display: inline-block;
@@ -224,21 +208,19 @@
   margin-right: 10px;
 }
 
-.center-content {
-  text-align: center;
-}
+
 .tab button {
     background-color: inherit;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 5px 10px; /* Giảm giá trị padding theo ý muốn */
+    padding: 5px 10px; 
     transition: 0.3s;
 }
 .tablinks {
   font-size: 40px;
-  color:gold; 
+  color:green; 
   display: flex;
   justify-content: center;
 }
@@ -253,7 +235,7 @@
     <div class="container">
         <h1>Chào mừng đến với Web cá nhân của mình !</h1>
         <p>
-            Đây là một trang web đơn giản được xây dựng bởi mình với mục đích giới thiệu cho mọi </br>người biết nhiều hơn về mình 
+            Đây là một trang web đơn giản được xây </br>dựng bởi mình với mục đích giới thiệu cho mọi </br>người biết nhiều hơn về mình 
         </p>
         <a>
         <div class="tab">
@@ -269,7 +251,7 @@
               <button class="tablinks" onclick="redirectToLab5()(event, 'lab5')">Lab5</button>
               <button class="tablinks" onclick="redirectToLab6()(event, 'lab6')">Lab6</button>
               <button class="tablinks" onclick="redirectToLab7()(event, 'lab7')">Lab7</button>
-             
+              <button class="tablinks" onclick="redirectToLab8()(event, 'lab8')">Lab8</button>
             </div>
           </div>
           <div class="center-content">
@@ -370,6 +352,9 @@ function redirectToLab6() {
 }
 function redirectToLab7() {
   window.location.href = "lab7.html";
+}
+function redirectToLab8() {
+  window.location.href = "lab8.html";
 }
 function redirectToAbout() {
   window.location.href = "about.html";
