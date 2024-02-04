@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang web về Thú Cưng</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
      body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -131,6 +132,93 @@
                 transform: translateY(0);
             }
         }
+
+        @keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.guided-button-animated {
+    animation: pulse 1s infinite; /* Áp dụng hiệu ứng nhấp nháy liên tục */
+}
+
+#guidedActionButton {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#guidedActionButton:hover {
+    background-color: #005F7F;
+    animation: none; /* Tắt hiệu ứng nhấp nháy khi hover */
+}
+.auth-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .auth-buttons button {
+            padding: 10px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .register-button {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .auth-form {
+            display: none;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        #loginForm {
+            background-color: #3498db;
+            color: white;
+        }
+
+        #registerForm {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .auth-message {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        .error-message {
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -139,6 +227,45 @@
         <h1>Trang web về Thú Cưng</h1>
     </header>
 
+    <div class="auth-buttons">
+        <button class="login-button" onclick="showForm('loginForm')">Đăng nhập</button>
+        <button class="register-button" onclick="showForm('registerForm')">Đăng ký</button>
+    </div>
+
+    <div id="loginForm" class="auth-form">
+        <h3>Đăng nhập</h3>
+        <!-- Thêm các trường và mã HTML của form đăng nhập tại đây -->
+        <label for="loginUsername">Tên đăng nhập:</label>
+        <input type="text" id="loginUsername" name="loginUsername" required>
+
+        <label for="loginPassword">Mật khẩu:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+
+        <!-- Sự kiện click đã được thêm vào đây -->
+        <button type="submit" onclick="login()">Đăng nhập</button>
+
+        <!-- Thêm id cho phần thông báo -->
+        <div id="loginMessage" class="auth-message"></div>
+    </div>
+
+    <div id="registerForm" class="auth-form">
+        <h3>Đăng ký</h3>
+        <!-- Thêm các trường và mã HTML của form đăng ký tại đây -->
+        <label for="registerUsername">Tên đăng nhập:</label>
+        <input type="text" id="registerUsername" name="registerUsername" required>
+
+        <label for="registerEmail">Email:</label>
+        <input type="email" id="registerEmail" name="registerEmail" required>
+
+        <label for="registerPassword">Mật khẩu:</label>
+        <input type="password" id="registerPassword" name="registerPassword" required>
+
+        <!-- Sự kiện click đã được thêm vào đây -->
+        <button type="submit" onclick="register()">Đăng ký</button>
+
+        <!-- Thêm id cho phần thông báo -->
+        <div id="registerMessage" class="auth-message"></div>
+    </div>
     <nav>
         <div class="nav-buttons">
             <a href="#">Trang chủ</a>
@@ -146,7 +273,7 @@
             <a href="#">Dịch vụ</a>
         </div>
     </nav>
-
+    <button type="button" id="guidedActionButton" class="guided-button-animated" onclick="guidedActionButton()">Hướng dẫn hành động</button>
     <section>
         <div class="image-container">
             <img src="images/l8.jfif" alt="Ảnh thú cưng">
@@ -177,22 +304,139 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const guideMessage = document.querySelector('.guide-message');
-            guideMessage.style.display = 'block';
-        });
+    const guideMessage = document.querySelector('.guide-message');
+    guideMessage.style.display = 'block';
+});
 
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-            };
-            console.log('Đã gửi dữ liệu liên hệ:', formData);
+document.getElementById('guidedActionButton').addEventListener('click', function () {
+    showGuidedAction();
 
-            const guideMessage = document.querySelector('.guide-message');
-            guideMessage.style.display = 'none';
-        });
+    // Tắt hiệu ứng nhấp nháy khi đã nhấn nút
+    this.style.animation = 'none';
+
+    // Tự động ẩn hướng dẫn sau 3 giây (có thể điều chỉnh)
+    setTimeout(function () {
+        guidedAction.style.display = 'none';
+    }, 3000);
+});
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Kiểm tra dữ liệu nhập
+    const fullNameInput = document.getElementById('fullName');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    if (!fullNameInput.value || !emailInput.value || !messageInput.value) {
+        alert('Vui lòng điền đầy đủ thông tin.');
+        return;
+    }
+
+    // Kiểm tra định dạng email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value)) {
+        alert('Email không hợp lệ. Vui lòng kiểm tra lại.');
+        return;
+    }
+
+    const formData = {
+        fullName: fullNameInput.value,
+        email: emailInput.value,
+        message: messageInput.value,
+    };
+
+    console.log('Đã gửi dữ liệu liên hệ:', formData);
+
+    const guideMessage = document.querySelector('.guide-message');
+    guideMessage.style.display = 'none';
+
+    // Hiển thị thông báo thành công (bạn có thể tùy chỉnh phần này)
+    const successMessage = document.createElement('p');
+    successMessage.textContent = 'Form đã được gửi thành công!';
+    successMessage.style.color = 'green';
+    document.getElementById('contactForm').appendChild(successMessage);
+});
+
+function showGuidedAction() {
+    const guidedAction = document.querySelector('.guide-message');
+    guidedAction.style.display = 'block';
+
+    // Tắt hiệu ứng nhấp nháy
+    const guidedButton = document.getElementById('guidedActionButton');
+    guidedButton.style.animation = 'none';
+
+    // Tự động ẩn hướng dẫn sau 3 giây (có thể điều chỉnh)
+    setTimeout(function () {
+        guidedAction.style.display = 'none';
+
+        // Bật lại hiệu ứng nhấp nháy sau khi ẩn hướng dẫn
+        guidedButton.style.animation = 'pulse 1s infinite';
+    }, 3000);
+}
+
+function guidedActionButton() {
+    Swal.fire({
+        title: 'Guided Action',
+        html: '<p>Chào mừng bạn đến với trang Yêu thích thú cưng!</p>' +
+            '<p>Đây là một số chức năng bạn có thể thử nghiệm:</p>' +
+            '<ul>' +
+            '<li>chọn đăng nhập để đăng nhập trang web thuận tiện .</li>' +
+            '<li>chọn đăng ký để tham gia cùng chúng tôi .</li>' +
+            '<li>Sử dụng liên kết "Liên hệ" để gửi thông điệp cho chúng tôi.</li>' +
+            '</ul>',
+        icon: 'info',
+        confirmButtonText: 'OK'
+    });
+}
+
+function showForm(formId) {
+            // Ẩn tất cả các biểu mẫu
+            document.querySelectorAll('.auth-form').forEach(form => {
+                form.style.display = 'none';
+            });
+
+            // Ẩn thông báo
+            document.querySelectorAll('.auth-message').forEach(message => {
+                message.textContent = '';
+            });
+
+            // Hiển thị biểu mẫu được chọn
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        function login() {
+            // Lấy giá trị từ các trường đăng nhập
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Kiểm tra điều kiện đăng nhập (Bạn có thể thay đổi điều kiện tùy theo yêu cầu)
+            if (username === 'user' && password === 'password') {
+                document.getElementById('loginMessage').textContent = 'Đăng nhập thành công.';
+                document.getElementById('loginMessage').classList.add('success-message');
+            } else {
+                document.getElementById('loginMessage').textContent = 'Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.';
+                document.getElementById('loginMessage').classList.add('error-message');
+            }
+        }
+
+        function register() {
+    // Lấy giá trị từ các trường đăng ký
+    const username = document.getElementById('registerUsername').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+
+    // Kiểm tra điều kiện đăng ký (Bạn có thể thay đổi điều kiện tùy theo yêu cầu)
+    if (username && email && password) {
+        document.getElementById('registerMessage').textContent = 'Đăng ký thành công.';
+        document.getElementById('registerMessage').classList.add('success-message');
+        document.getElementById('registerMessage').classList.remove('error-message');
+    } else {
+        document.getElementById('registerMessage').textContent = 'Đăng ký thất bại. Vui lòng điền đầy đủ thông tin.';
+        document.getElementById('registerMessage').classList.add('error-message');
+        document.getElementById('registerMessage').classList.remove('success-message');
+    }
+}
     </script>
 
 </body>
