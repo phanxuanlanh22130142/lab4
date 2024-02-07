@@ -240,32 +240,51 @@
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'ex1')">Ex1</button>
   <button class="tablinks" onclick="openTab(event, 'ex2')">Ex2</button>
+  <button class="tablinks" onclick="openNestedTab(event, 'equiment')">Equiment</button>
 </div>
-
+<div id="equiment" class="nestedtabcontent" style="display:none" >
+  <div class="box">
+  <p>  Trong menu Labs, tạo 1 menu Lab6 (file lab6.html)  sau đó tạo 2 tab Ex1, Ex2</br>
+    Ex1: Thiết kế một trang Web đơn giản sử dụng mẫu F-pattern ==> chuyển sang html (ex1.html)</br>
+    Ex2: Thiết kế một trang Web sử dụng mẫu Z-pattern ==> chuyển sang html (ex2.html)</br>
+    Với cả Ex1, Ex2: Tạo 2 tab Design và Implementation: </br>
+                 + Design: chụp lại hình ảnh để có cái nhìn tổng quan về file thiết kế (thiết kế trên giấy và Figma), có nút Download để download file thiết kế về nếu muốn</br>
+                 + Implementation: nội dung phần hiện thực trên html</br>
+    Upload lên github </p>
+  
+  </div>
+    </div>
 <div id="ex1" class="tabcontent">
   <button class="tablinks" onclick="openNestedTab(event, 'design1')">Design</button>
   <a href="f_pattern.html"><button class="tablinks">Implementation</button></a>
   <div id="design1" class="nestedtabcontent" style="display:none;">
    
     <div class="box">
-      <img src="images/f_p.png" alt="Hình ảnh 1">
-      <a href="images/f_p.png" download="images/f_p.png">Download</a>
+      <img src="images/f_fm.jpg" alt="Hình ảnh 1">
+      <a href="images/f_fm.jpg" download="images/f_fm.jpg">Download</a>
+      <a href="https://www.figma.com/file/pFhZKwCvgxbQ951YbKHX8V/f?type=design&mode=design&t=LuNTVrpJuxCjmmyM-1"
+            target="_blank" class="figma-button">Go to Figma</a>
     </div>
     <div class="box">
       <img src="images/fd.jpg" alt="Image 2">
       <a href="images/fd.jpg" download="images/fd.jpg">Download</a>
+      
     </div>
   </div>
   
 </div>
 
 <div id="ex2" class="tabcontent">
+<button class="tablinks" onclick="openNestedTab(event, 'equiment')">Equiment</button>
   <button class="tablinks" onclick="openNestedTab(event, 'design2')">Design</button>
   <a href="z_pattern.html"><button class="tablinks">Implementation</button></a>
+  
   <div id="design2" class="nestedtabcontent" style="display:none">
     <div class="box">
-      <img src="images/z_p.png" alt="Image 3">
-      <a href="images/z_p.png" download>Download</a>
+      <img src="images/z_pm.jpg" alt="Image 3">
+      <a href="images/z_pm.jpg" download>Download</a>
+      <a href="https://www.figma.com/file/ESQNahx9802XwGldCfz8Fv/Untitled?type=design&node-id=0%3A1&mode=design&t=LuNTVrpJuxCjmmyM-1"
+            target="_blank" class="figma-button">Go to Figma</a>
     </div>
     <div class="box">
       <img src="images/zd.jpg" alt="Image 4">
