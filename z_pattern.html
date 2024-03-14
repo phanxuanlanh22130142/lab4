@@ -65,6 +65,20 @@
       text-align: center;
       padding: 1em 0;
     }
+    header button {
+      background-color: #f39c12; 
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px; 
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    header button:hover {
+      background-color: #e67e22; 
+    }
   </style>
 </head>
 <body>
@@ -72,11 +86,15 @@
   <header>
     <h1>Trang Web Người Yêu Thú Cưng</h1>
     <p>Chào mừng đến với cộng động người yêu thú cưng</p>
+    <button onclick="openLink('lab6.html')">Lab6</button>
+      <button onclick="openLink('z_pattern.html')">Lab6(z)</button>
+      <button onclick="openLink('f_pattern.html')">Lab6(f)</button>
   </header>
 
  
   <nav>
     <ul>
+      
       <li><a href="#">Trang Chủ</a></li>
       <li><a href="#">Giới Thiệu</a></li>
       <li><a href="#">Thú Cưng Của Chúng Tôi</a></li>
@@ -104,6 +122,13 @@
   <footer>
     <p>&copy; 2023 Trang Web Người Yêu Thú Cưng - Liên hệ với 22130142-Phan Xuân Lãnh</p>
   </footer>
-
+  <script>
+    
+    function openLink(link) {
+      
+      window.open(link, '_blank');
+  }
+  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  </script>
 </body>
 </html>

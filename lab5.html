@@ -4,26 +4,20 @@
   <title>Web về môi trường</title>
   <style>
     body {
-      font-family:Arial, Helvetica, sans-serif;
+      font-family:Arial,  sans-serif;
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #f2f2f2;
-      padding: 0px;
-      text-align: center;
-      font-size: 20px;
-      color: chartreuse;
-      margin: 0px;
-    }
+   
     nav {
       background-color:cyan;
       color: white;
       text-align: center;
       padding: 0px;
       width: 1400px;
-      height: 50px;
+      height: 43px;
       font-size: 17px;
+
     }
     .section {
       display: flex;
@@ -126,11 +120,59 @@
 .figma-button:hover {
   background-color: #544BD2;
 }
+header {
+      background-color: #f2f2f2;
+      padding: 0px;
+      text-align: center;
+      font-size: 20px;
+      color: chartreuse;
+      margin: 0px;
+      
+            
+            
+            
+           
+        
+    }
+    .implementation-buttons button:hover {
+            background-color: chartreuse;
+            cursor: pointer;
+        }
+       
+        .implementation-buttons button {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color:chartreuse;
+            color:black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            text-align: center;
+            
+        }
+h1{
+  margin: 0px;
+}
   </style>
 </head>
 <body>
   <div class="container1">
     <header>
+      <div class="implementation-buttons">
+        <button onclick="openLink('index.html')">Lab4 và Lab3</button>
+        <button onclick="openLink('lab5.html')">Lab5</button>
+        <button onclick="openLink('lab6.html')">Lab6</button>
+        
+        <button onclick="openLink('lab7.html')">Lab7</button>
+        <button onclick="openLink('lab8.html')">Lab8</button>
+        
+      
+     
+
+    </div>
       <h1>Website về môi trường </h1>
     </header>
 
@@ -183,6 +225,11 @@
         document.querySelector(".section").style.display = "none";
         document.getElementById("tabContent").style.display = "block";
       });
+      function openLink(link) {
+        
+        window.open(link, '_blank');
+    }
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
     </script>
   </div>
 </body>

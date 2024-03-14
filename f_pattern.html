@@ -61,6 +61,20 @@
       bottom: 0;
       width: 100%;
     }
+    nav button {
+      background-color: #f39c12; 
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px; 
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    nav button:hover {
+      background-color: #e67e22; 
+    }
   </style>
 </head>
 <body>
@@ -73,6 +87,9 @@
   
   <nav>
     <ul>
+      <button onclick="openLink('lab6.html')">Lab6</button>
+      <button onclick="openLink('z_pattern.html')">Lab6(z)</button>
+      <button onclick="openLink('f_pattern.html')">Lab6(f)</button>
       <li><a href="#">Giới thiệu</a></li>
       <li><a href="#">Vấn đề Môi trường</a></li>
       <li><a href="#">Giải pháp</a></li>
@@ -109,5 +126,14 @@ Giáo dục và tạo động lực: Tăng cường giáo dục về vấn đề
   <footer>
     <p>© 2023 Bảo vệ Môi trường - Liên hệ: 22130142-Phan Xuân Lãnh</p>
   </footer>
+  
+  <script>
+    
+    function openLink(link) {
+      
+      window.open(link, '_blank');
+  }
+  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  </script>
 </body>
 </html>
