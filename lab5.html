@@ -19,6 +19,30 @@
       font-size: 17px;
 
     }
+    nav {
+      background-color: cyan;
+      text-align: center;
+      width: 1400px;
+      height: 43px;
+      font-size: 17px;
+      display: flex;
+      justify-content: space-evenly; /* Can chỉnh vị trí nút theo yêu cầu */
+      align-items: center;
+    }
+
+    nav button, nav a {
+      padding: 10px 20px;
+      background-color: #6C63FF;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav button:hover, nav a:hover {
+      background-color: #544BD2;
+    }
     .section {
       display: flex;
       padding: 0px;
@@ -121,13 +145,13 @@
   background-color: #544BD2;
 }
 header {
-      background-color: #f2f2f2;
+      background-color: #333;
       padding: 0px;
       text-align: center;
       font-size: 20px;
       color: chartreuse;
       margin: 0px;
-      
+      width: 100%;
             
             
             
@@ -151,10 +175,87 @@ header {
             transition: background-color 0.3s;
             cursor: pointer;
             text-align: center;
-            
+            width: 200px;
         }
 h1{
   margin: 0px;
+}
+.tabcontent {
+      display: none; /* Ẩn nội dung lúc đầu */
+      padding: 20px;
+      text-align: center;
+    }
+    .modal {
+    display: none; /* Trạng thái ban đầu: ẩn */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5); /* Nền mờ */
+  }
+
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+  }
+
+  .figma-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6C63FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .figma-button:hover {
+    background-color: #544BD2;
+  }
+
+  .d1 {
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    object-fit: cover;
+    border: 2px solid black;
+  }
+
+  .download-button {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .image-container {
+    display: flex;
+}
+
+.image1, .image2 {
+    width: 50%; 
+    height: auto; 
+}
+.download-button {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #4CAF50; 
+    color: white; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    height: 30px;
+}
+
+.download-button:hover {
+    background-color: #45a049; 
+    color: white;
 }
   </style>
 </head>
@@ -175,15 +276,40 @@ h1{
     </div>
       <h1>Website về môi trường </h1>
     </header>
-
+   
     <nav>
-      <a href="#">Trang Chủ</a> |
-      <a href="#">Lưu trữ</a> |
-      <a href="#">About</a> |
-      <a href="#">Liên Hệ</a> |
-      <a href="#" id="user_scenario">User Scenario</a> 
+      <button><a href="#">Trang Chủ</a></button>
+      <button class="tablinks" onclick="openModal()">Requirement</button>
+      <button class="tablinks" onclick="openDesignModal()">Design</button>
+      <button class="tablinks" onclick="redirectToImplement(event, 'implement')">Implement</button>
+      <button><a href="#" id="user_scenario">User Scenario</a></button> 
     </nav>
-
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Requirement </h3>
+        <p>Bài tập cá nhân: 
+          (1) Tạo ra một user scenario
+          (2) Chọn 1 bước trong user scenario để thiết kế 1 form giao diện Web trên công cụ thiết kế đã chọn. Sau đó thiết kế trên Figma rồi chuyển sang html tương ứng cho thiết kế này.
+          Upload lên github: trong file html có chèn hình ảnh của user scenario ở (1) và đường dẫn của file thiết kế ở (2).</p>
+      </div>
+    </div>
+    <div id="designModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeDesignModal()">&times;</span>
+        
+           
+        <div class="image-container">
+      <img class="d1" src="images/b5.jpg" alt="Hình ảnh về môi trường">
+        <a href="#" class="download-button" onclick="downloadImage('images/b5.jpg')">Tải thiết kế trên giấy</a>
+        
+   <img class="d1" src="images/hj.png" alt="Hình ảnh về môi trường">
+        <a href="#" class="download-button" onclick="downloadImage('images/hj.png')">Tải thiết kế figma</a>
+        </div>
+      <p>(2)Figma</p>
+      <a href="https://www.figma.com/file/c8HOoInKg4nbUsX1JLrjMq/Website-v%E1%BB%81-m%C3%B4i-tr%C6%B0%E1%BB%9Dng?type=design&node-id=0%3A1&mode=design&t=W1HZjVzVCyRMr7GQ-1" target="_blank" class="figma-button">Go to Figma</a>
+      </div>
+    </div>
     <div class="section">
       <div class="external1-image"></div>
 
@@ -221,6 +347,35 @@ h1{
     </footer>
     
     <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none"; // Ẩn tất cả tabcontent
+      }
+      document.getElementById(tabName).style.display = "block"; // Hiển thị tabcontent cụ thể
+    }
+function openNestedTab(evt, nestedTabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(nestedTabName).style.display = "block";
+}
+
+function redirectToImplement() {
+  window.location.href = "lab5.html";
+}
+function redirectToAbout() {
+  window.location.href = "about.html";
+}
+
+
+
+
+
+
       document.getElementById("user_scenario").addEventListener("click", function() {
         document.querySelector(".section").style.display = "none";
         document.getElementById("tabContent").style.display = "block";
@@ -230,6 +385,34 @@ h1{
         window.open(link, '_blank');
     }
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    
+    // Đóng cửa sổ popup nếu người dùng nhấn bên ngoài cửa sổ
+    function openModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+
+    // Close the modal
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+
+
+
+    // Mở cửa sổ modal Design
+    function openDesignModal() {
+      var modal = document.getElementById("designModal");
+      modal.style.display = "block";
+    }
+
+    // Đóng cửa sổ modal Design
+    function closeDesignModal() {
+      var modal = document.getElementById("designModal");
+      modal.style.display = "none";
+    }
     </script>
   </div>
 </body>

@@ -63,10 +63,53 @@ th, td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+header {
+            background-color: #333;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        .implementation-buttons button {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color:chartreuse;
+            color:black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            text-align: center;
+            width: 200px;
+        }
+
+        
+        .implementation-buttons button:hover {
+            background-color: chartreuse;
+            cursor: pointer;
+        }
     </style>
     <title>Quản lý đối tượng gà</title>
 </head>
 <body>
+    <header>
+        
+        <div class="implementation-buttons">
+            <button onclick="openLink('index.html')">Lab4 và Lab3</button>
+            <button onclick="openLink('lab5.html')">Lab5</button>
+            <button onclick="openLink('lab6.html')">Lab6</button>
+            
+            <button onclick="openLink('lab7.html')">Lab7</button>
+            <button onclick="openLink('lab8.html')">Lab8</button>
+            
+          
+         
+    
+        </div>
+    
+   
+</header>
     <h1><img src="images/chicken.jpg" alt="chicken-left" class="icon"> Quản lý đối tượng gà <img src="images/chicken.jpg" alt="chicken-right" class="icon"></h1>
 
 
@@ -180,6 +223,11 @@ tr:nth-child(even) {
             items.splice(index, 1);
             showItems();
         }
+        function openLink(link) {
+        
+        window.open(link, '_blank');
+    }
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
     </script>
 </body>
 </html>
