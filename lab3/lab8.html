@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web về Thú Cưng</title>
+    <style>
+     body {
+        font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+       
+
+        nav {
+            background-color: #eee;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center; 
+            margin-top: 10px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+            margin: 0 5px; 
+        }
+
+        .nav-buttons a:hover {
+            background-color: #ddd;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        footer {
+            background-color:#333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        input, select, textarea, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: calc(100% - 20px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .guide-message {
+            display: none;
+            background-color: #ffd700;
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .image-container img {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .tab-content {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .design-images {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .design-images img {
+            width: 40%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .download-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #555;
+        }
+
+        .figma-button {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .figma-button:hover {
+            background-color: #34495e;
+        }
+        .implementation-buttons button {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color:chartreuse;
+            color:black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        
+        .implementation-buttons button:hover {
+            background-color: chartreuse;
+            cursor: pointer;
+        }
+        header {
+            background-color: #333;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        .implementation-buttons button {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color:chartreuse;
+            color:black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        
+        .implementation-buttons button:hover {
+            background-color: chartreuse;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        
+            <div class="implementation-buttons">
+                <button onclick="openLink('index.html')">Lab4 và Lab3</button>
+                <button onclick="openLink('lab5.html')">Lab5</button>
+                <button onclick="openLink('lab6.html')">Lab6</button>
+                
+                <button onclick="openLink('lab7.html')">Lab7</button>
+                <button onclick="openLink('lab8.html')">Lab8</button>
+                
+              
+             
+        
+            </div>
+        
+        <h1>Trang web về Thú Cưng</h1>
+    </header>
+
+    <nav>
+        <div class="nav-buttons">
+            <a href="#">Trang chủ</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Dịch vụ</a>
+            <a href="#" class="tab-button" data-tab="equipment">Equipment</a>
+            <a href="#" class="tab-button" data-tab="design">Design</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="equipment-tab">
+        <h3>Yêu cầu</h3>
+        <p>Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions</br>
+            Có biểu mẫu liên hệ</br>
+            Upload lên github</P>
+    </div>
+    <div class="tab-content" id="design-tab">
+        <h3>Design Tab Content</h3>
+        <img class="d1" src="images/lap8.jpg" alt="Hình ảnh về môi trường">
+        <a href="#" class="download-button" onclick="downloadImage('images/lap8.jpg')">Tải thiết kế giấy</a>
+
+        <img class="d1" src="images/lab8_fm.jpg" alt="Hình ảnh về môi trường">
+        <a href="#" class="download-button" onclick="downloadImage('images/lab8_fm.jpg')">Tải thiết kế figma</a>
+
+        <a href="https://www.figma.com/file/TdgoSvcAu1ZdsfMUOMLhBR/Untitled?type=design&node-id=0%3A1&mode=design&t=rKaYJGhr1RanZumh-1"
+            target="_blank" class="figma-button">Go to Figma</a>
+    </div>
+    <section>
+        <div class="image-container">
+            <img src="images/l8.jfif" alt="Ảnh thú cưng">
+            <img src="images/l82.jfif" alt="Ảnh thú cưng">
+            <img src="images/l83.jfif" alt="Ảnh thú cưng">
+        </div>
+        
+        <h2>Liên hệ với chúng tôi</h2>
+        <div class="guide-message">
+            <p>Hãy điền thông tin liên hệ của bạn vào biểu mẫu bên dưới.</p>
+        </div>
+        <form id="contactForm">
+            <label for="fullName">Họ và tên:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Nội dung tin nhắn:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Gửi</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Bản quyền © 22130142_Phan Xuân Lãnh.</p>
+    </footer>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const tabId = this.getAttribute('data-tab');
+                activateTab(tabId);
+            });
+        });
+
+        function activateTab(tabId) {
+            tabContents.forEach(tabContent => {
+                tabContent.classList.remove('active');
+            });
+
+            const activeTab = document.getElementById(tabId + '-tab');
+            activeTab.classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const guideMessage = document.querySelector('.guide-message');
+            guideMessage.style.display = 'block';
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+            };
+            console.log('Đã gửi dữ liệu liên hệ:', formData);
+
+            const guideMessage = document.querySelector('.guide-message');
+            guideMessage.style.display = 'none';
+        });
+        function downloadImage(imageSrc) {
+            
+            var link = document.createElement('a');
+            link.href = imageSrc;
+            link.download = 'downloaded_image.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        function openLink(link) {
+        
+        window.open(link, '_blank');
+    }
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    </script>
+
+</body>
+</html>
