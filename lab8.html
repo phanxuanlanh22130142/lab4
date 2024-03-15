@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang web về Thú Cưng</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
      body {
         font-family: Arial, sans-serif;
@@ -221,6 +222,263 @@
             background-color: chartreuse;
             cursor: pointer;
         }
+        .guided-action-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: aqua;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px; 
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    }
+
+    .guided-action-button:hover {
+      background-color: #555;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .guided-action-button:active {
+      transform: scale(0.95);
+    }
+    @keyframes blinkAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.guided-action-button.blinking {
+  animation: blinkAnimation 1s infinite; 
+}
+
+#login-content, #register-content {
+      display: none;
+    }
+#login-content, #register-content {
+      display: none;
+    }
+
+    .login-register-container {
+  display: flex;
+}
+
+.login-button,
+.register-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.login-button:hover,
+.register-button:hover {
+  background-color: #555;
+  color: greenyellow;
+  transform: scale(1.05);
+}
+.auth-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .auth-buttons button {
+            padding: 10px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .register-button {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .auth-form {
+            display: none;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        #loginForm {
+            background-color: #3498db;
+            color: black;
+        }
+
+        #registerForm {
+            background-color: #2ecc71;
+            color: black;
+        }
+
+        .auth-message {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        .error-message {
+            color: orangered;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+input, select, textarea, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #000;
+            width: 200px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .center-content .box .image-container img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  animation: none; /* Disable any existing animation */
+}
+form#contactForm {
+    /* Add your specific CSS styles for the contact form here */
+    /* For example */
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+
+  form#contactForm label {
+    font-weight: bold;
+  }
+
+  form#contactForm input[type="text"],
+  form#contactForm input[type="email"],
+  form#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  form#contactForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form#contactForm button[type="submit"]:hover {
+    background-color: #45a049;
+  } .modal {
+    display: none; /* Trạng thái ban đầu: ẩn */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5); /* Nền mờ */
+  }
+
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+  }.d1 {
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    object-fit: cover;
+    border: 2px solid black;
+  }
     </style>
 </head>
 <body>
@@ -242,33 +500,78 @@
         
         <h1>Trang web về Thú Cưng</h1>
     </header>
-
+    <button onclick="guidedAction(this)" class="guided-action-button blinking">Guided Action</button>
+    <div class="taskManager">
+        <div class="auth-buttons">
+          <button onclick="showLoginForm()">Đăng nhập</button>
+          <button onclick="showRegisterForm()">Đăng ký</button>
+          <button class="tablinks" onclick="openModal()">Requirement</button>
+      <button class="tablinks" onclick="openDesignModal()">Design</button>
+      <button onclick="openLink('lab8.html')">Implement</button>
+      <button onclick="openLink('https://phanxuanlanh22130142.github.io/projectGroup18/result2.html')">Result</button>
+      </div>
+      
+      
+      
+      <form id="loginForm" onsubmit="event.preventDefault(); submitLoginForm()">
+          <label for="username">Tên người dùng:</label><br>
+          <input type="text" id="username" name="username"><br>
+          <label for="password">Mật khẩu:</label><br>
+          <input type="password" id="password" name="password"><br><br>
+          <input type="submit" value="Đăng nhập">
+      </form>
+      <p id="loginMessage"></p> 
+    
+      
+      <form id="registerForm" onsubmit="event.preventDefault(); submitRegisterForm()">
+          <label for="fullname">Họ và tên:</label><br>
+          <input type="text" id="fullname" name="fullname"><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email"><br>
+          <label for="newusername">Tên người dùng mới:</label><br>
+          <input type="text" id="newusername" name="newusername"><br>
+          <label for="newpassword">Mật khẩu mới:</label><br>
+          <input type="password" id="newpassword" name="newpassword"><br><br>
+          <input type="submit" value="Đăng ký">
+      </form>
+      <p id="registerMessage"></p> 
     <nav>
         <div class="nav-buttons">
             <a href="#">Trang chủ</a>
             <a href="#">Liên hệ</a>
             <a href="#">Dịch vụ</a>
-            <a href="#" class="tab-button" data-tab="equipment">Equipment</a>
-            <a href="#" class="tab-button" data-tab="design">Design</a>
+            
         </div>
     </nav>
-    <div class="tab-content" id="equipment-tab">
-        <h3>Yêu cầu</h3>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h3>Requirement </h3>
+          <h3>Yêu cầu</h3>
         <p>Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions</br>
             Có biểu mẫu liên hệ</br>
             Upload lên github</P>
-    </div>
-    <div class="tab-content" id="design-tab">
-        <h3>Design Tab Content</h3>
+        </div>
+      </div>
+      <div id="designModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDesignModal()">&times;</span>
+          
+             
+          <div class="image-container">
         <img class="d1" src="images/lap8.jpg" alt="Hình ảnh về môi trường">
-        <a href="#" class="download-button" onclick="downloadImage('images/lap8.jpg')">Tải thiết kế giấy</a>
-
-        <img class="d1" src="images/lab8_fm.jpg" alt="Hình ảnh về môi trường">
-        <a href="#" class="download-button" onclick="downloadImage('images/lab8_fm.jpg')">Tải thiết kế figma</a>
-
-        <a href="https://www.figma.com/file/TdgoSvcAu1ZdsfMUOMLhBR/Untitled?type=design&node-id=0%3A1&mode=design&t=rKaYJGhr1RanZumh-1"
-            target="_blank" class="figma-button">Go to Figma</a>
-    </div>
+          <a href="#" class="download-button" onclick="downloadImage('images/lap8.jpg')">Tải thiết kế trên giấy</a>
+          
+     <img class="d1" src="images/lab8_fm.jpg" alt="Hình ảnh về môi trường">
+          <a href="#" class="download-button" onclick="downloadImage('images/lab8_fm.jpg')">Tải thiết kế figma</a>
+          </div>
+        <p>(2)Figma</p>
+        <a href="https://www.figma.com/file/TdgoSvcAu1ZdsfMUOMLhBR/Untitled?type=design&node-id=0%3A1&mode=design&t=rKaYJGhr1RanZumh-1" target="_blank" class="figma-button">Go to Figma</a>
+        </div>
+      </div>
+    
+    
     <section>
         <div class="image-container">
             <img src="images/l8.jfif" alt="Ảnh thú cưng">
@@ -348,6 +651,110 @@
         window.open(link, '_blank');
     }
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    function guidedAction(button) {
+    button.classList.remove('blinking');
+
+    Swal.fire({
+        title: 'Guided Action',
+        html: '<p>Chào mừng bạn đến với tính năng Guided Action! Dưới đây là một số hướng dẫn chi tiết:</p>' +
+            '<ul>' +
+            '<li>Nhấn "Đăng nhập" để trải nghiệm chức năng đăng nhập.</li>' +
+            '<li>Nhấn "Đăng ký" để tạo một tài khoản mới.</li>' +
+            
+          '<li>Nếu có bất cứ vấn đề gì cần giao tiếp hãy liên hệ với chúng tôi bằng from liên hệ. </li>'+
+            '</ul>',
+        icon: 'info',
+        confirmButtonText: 'OK'
+    });
+}
+document.addEventListener('DOMContentLoaded', function () {
+    
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'none';
+});
+
+function showLoginForm() {
+    document.getElementById('loginForm').style.display = 'block'; 
+    document.getElementById('registerForm').style.display = 'none'; 
+}
+
+function showRegisterForm() {
+    document.getElementById('registerForm').style.display = 'block'; 
+    document.getElementById('loginForm').style.display = 'none'; 
+}
+
+function submitLoginForm() {
+    let loginForm = document.getElementById('loginForm');
+    let loginMessage = document.getElementById('loginMessage');
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    if (username === 'user' && password === 'pass') {
+        loginMessage.innerText = 'Đăng nhập thành công!';
+        setTimeout(function(){
+            loginMessage.innerText = ''; 
+            loginForm.style.display = 'none'; 
+        }, 2000);
+    } else {
+        loginMessage.innerText = 'Đăng nhập thất bại. Vui lòng thử lại.';
+        setTimeout(function(){
+            loginMessage.innerText = ''; 
+            loginForm.style.display = 'none'; 
+        }, 2000);
+    }
+}
+
+function submitRegisterForm() {
+    let registerForm = document.getElementById('registerForm');
+    let registerMessage = document.getElementById('registerMessage');
+    let fullname = document.getElementById('fullname').value;
+    let email = document.getElementById('email').value;
+    let newusername = document.getElementById('newusername').value;
+    let newpassword = document.getElementById('newpassword').value;
+    if (fullname !== '' && email !== '' && newusername !== '' && newpassword !== '') {
+        registerMessage.innerText = 'Đăng ký thành công!';
+        setTimeout(function(){
+            registerMessage.innerText = ''; 
+            registerForm.style.display = 'none'; 
+        }, 2000);
+    } else {
+        registerMessage.innerText = 'Đăng ký thất bại. Vui lòng thử lại.';
+    }
+}function showContactForm() {
+    document.getElementById("contactForm").style.display = "block";
+}
+
+function submitForm(event) {
+  event.preventDefault();
+  alert("Form đã được gửi!"); 
+  document.getElementById("contactForm").style.display = "none";
+}
+
+function openModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+
+    
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+
+
+
+   
+    function openDesignModal() {
+      var modal = document.getElementById("designModal");
+      modal.style.display = "block";
+    }
+
+    
+    function closeDesignModal() {
+      var modal = document.getElementById("designModal");
+      modal.style.display = "none";
+    }
     </script>
 
 </body>
