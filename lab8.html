@@ -646,9 +646,8 @@ form#contactForm {
             link.click();
             document.body.removeChild(link);
         }
-        function openLink(link) {
-        
-        window.open(link, '_blank');
+         function openLink(link) {
+        window.location.href = link;
     }
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
