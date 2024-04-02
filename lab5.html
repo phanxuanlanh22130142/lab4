@@ -380,9 +380,8 @@ function redirectToAbout() {
         document.querySelector(".section").style.display = "none";
         document.getElementById("tabContent").style.display = "block";
       });
-      function openLink(link) {
-        
-        window.open(link, '_blank');
+       function openLink(link) {
+        window.location.href = link;
     }
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
