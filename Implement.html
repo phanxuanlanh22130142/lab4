@@ -96,7 +96,7 @@ header {
     <header>
         
         <div class="implementation-buttons">
-            <button onclick="openLink('index.html')">Lab4 và Lab3</button>
+            <button onclick="openLink('index.html')">Lab3 và Lab4</button>
             <button onclick="openLink('lab5.html')">Lab5</button>
             <button onclick="openLink('lab6.html')">Lab6</button>
             
@@ -223,9 +223,8 @@ header {
             items.splice(index, 1);
             showItems();
         }
-        function openLink(link) {
-        
-        window.open(link, '_blank');
+      function openLink(link) {
+        window.location.href = link;
     }
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
     </script>
