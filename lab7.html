@@ -173,6 +173,193 @@ header {
             background-color: chartreuse;
             cursor: pointer;
         }
+
+        .guided-action-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: aqua;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px; 
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    }
+
+    .guided-action-button:hover {
+      background-color: #555;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .guided-action-button:active {
+      transform: scale(0.95);
+    }
+    @keyframes blinkAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.guided-action-button.blinking {
+  animation: blinkAnimation 1s infinite; 
+}
+form#contactForm {
+    
+  
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+
+  form#contactForm label {
+    font-weight: bold;
+  }
+
+  form#contactForm input[type="text"],
+  form#contactForm input[type="email"],
+  form#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  form#contactForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form#contactForm button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  input, select, textarea, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #000;
+            width: 300px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .center-content .box .image-container img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  animation: none; 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    max-width: 600px; 
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+.modal-content h3 {
+    margin-top: 0; 
+}
+
+.modal-content p {
+    margin-top: 10px; 
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.design-images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.image-container {
+    display: flex;
+}
+
+.image-container img {
+    width: 50%;
+}
+.design-image {
+    width: 40%; 
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.design-image img {
+    width: 100%; 
+    border-radius: 10px;
+}
+.tablinks {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-right: 10px; 
+}
+
+.tablinks:last-child {
+    background-color: #f44336; 
+}
+
     </style>
 </head>
 
@@ -198,46 +385,63 @@ header {
         <a href="#home">Trang chủ</a>
         <a href="#projects">Dự án</a>
         <a href="#contact">Liên hệ</a>
-        <a href="#equipment" id="equipment_tab">Equipment</a>
-        <a href="#design" id="design_tab">Design</a>
-      
+        
             
         
     </nav>
 
 
 
-    <button onclick="guidedAction()">Guided Action</button>
-
-    <div id="equipment_content" style="display: none;">
-        <h3>Yêu cầu</h3>
-        <p>Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions</br>
-          Có biểu mẫu liên hệ</br>
-          Upload lên github</p>
-    </div>
-
-    <div id="design_content" style="display: none;">
-      <img class="d1" src="images/lab7.jpg" alt="Hình ảnh về môi trường">
-        <a href="#" class="download-button" onclick="downloadImage('images/lab7.jpg')">Tải thiết kế giấy</a>
-
-        <img class="d1" src="images/lab7_fm.jpg" alt="Hình ảnh về môi trường">
-        <a href="#" class="download-button" onclick="downloadImage('images/lab7_fm.jpg')">Tải thiết kế figma</a>
-
-        <a href="https://www.figma.com/file/dsEhL9d1S6j2cx1lPBooP6/Lab7?type=design&node-id=0%3A1&mode=design&t=ZYM9Mv0s7aNZbmIY-1"
-            target="_blank" class="figma-button">Go to Figma</a>
-    </div>
-    <h2>Bảo vệ Môi Trường</h2>
-
-
-    <img class="environment-img" src="images/mt.jfif" alt="Hình ảnh về môi trường">
-
-
+    <button onclick="guidedAction(this)" class="guided-action-button blinking">Guided Action</button>
+    <button class="tablinks" onclick="openModal()">Requirement</button>
+        <button class="tablinks" onclick="openDesignModal()">Design</button>
+        <button class="tablinks" onclick="openLink('lab7.html')">Implement</button>
     <form>
         <label for="emailInput">Nhập địa chỉ email của bạn để theo dõi các dự án môi trường:</label>
         <br>
         <input type="email" id="emailInput" name="email" placeholder="Email của bạn" style="width: 200px;">
         <button type="submit" id="subscribeBtn">Đăng ký</button>
     </form>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Requirement</h3>
+            <h3>Yêu cầu</h3>
+            <p>
+                Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions<br>
+                Có biểu mẫu liên hệ<br>
+                Upload lên github
+            </p>
+        </div>
+    </div>
+    
+    <div id="designModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDesignModal()">&times;</span>
+            <div class="image-container">
+                <div class="design-image">
+                    <img class="d1" src="images/lab7.jpg" alt="Hình ảnh về môi trường">
+                    <a href="#" class="download-button" onclick="downloadImage('images/lap7.jpg')">Tải thiết kế trên giấy</a>
+                </div>
+                <div class="design-image">
+                    <img class="d1" src="images/lab7_fm.jpg" alt="Hình ảnh về môi trường">
+                    <a href="#" class="download-button" onclick="downloadImage('images/lab7_fm.jpg')">Tải thiết kế figma</a>
+                </div>
+            </div>
+            <p>(2) Figma</p>
+            <a href="https://www.figma.com/file/dsEhL9d1S6j2cx1lPBooP6/Lab7?type=design&node-id=0%3A1&mode=design&t=ZYM9Mv0s7aNZbmIY-1" target="_blank" class="figma-button">Go to Figma</a>
+        </div>
+    </div>
+   
+
+  
+    <h2>Bảo vệ Môi Trường</h2>
+
+
+    <img class="environment-img" src="images/mt.jfif" alt="Hình ảnh về môi trường">
+
+
+   
 
 
     <p class="introduction">Chào mừng bạn đến với trang yêu thích môi trường của chúng tôi. Ở đây, bạn sẽ tìm thấy thông tin về
@@ -272,7 +476,7 @@ header {
 
     <h3 id="contact">Liên Hệ</h3>
 
-    <form action="/submit_contact_form" method="post">
+    <form id="contactForm" onsubmit="submitForm(event)">
         <label for="nameInput">Họ và Tên:</label><br>
         <input type="text" id="nameInput" name="name" placeholder="Họ và tên của bạn" style="width: 200px;"><br>
         <label for="emailInput">Email:</label><br>
@@ -304,20 +508,58 @@ header {
         window.location.href = link;
     }
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        function guidedAction() {
-            Swal.fire({
-                title: 'Guided Action',
-                html: '<p>Chào mừng bạn đến với trang Yêu thích Môi trường!</p>' +
+      
+
+        function guidedAction(button) {
+    button.classList.remove('blinking');
+
+    Swal.fire({
+        title: 'Guided Action',
+        html:'<p>Chào mừng bạn đến với trang Yêu thích Môi trường!</p>' +
                     '<p>Đây là một số chức năng bạn có thể thử nghiệm:</p>' +
                     '<ul>' +
                     '<li>Nhập địa chỉ email và nhấn "Đăng ký" để theo dõi các dự án môi trường.</li>' +
                     '<li>Khám phá các dự án môi trường và cách bạn có thể tham gia bảo vệ môi trường.</li>' +
                     '<li>Sử dụng liên kết "Liên hệ" để gửi thông điệp cho chúng tôi.</li>' +
-                    '</ul>',
-                icon: 'info',
-                confirmButtonText: 'OK'
-            });
-        }
+                    '</ul>' ,
+        icon: 'info',
+        confirmButtonText: 'OK'
+    });
+}
+
+function showContactForm() {
+    document.getElementById("contactForm").style.display = "block";
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    alert("Form đã được gửi!");
+    document.getElementById("contactForm").style.display = "none";
+}function openModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+
+    
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+
+
+
+   
+    function openDesignModal() {
+      var modal = document.getElementById("designModal");
+      modal.style.display = "block";
+    }
+
+    
+    function closeDesignModal() {
+      var modal = document.getElementById("designModal");
+      modal.style.display = "none";
+    }
     </script>
 </body>
 
