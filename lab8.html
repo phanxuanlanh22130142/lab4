@@ -583,7 +583,7 @@ form#contactForm {
         <div class="guide-message">
             <p>Hãy điền thông tin liên hệ của bạn vào biểu mẫu bên dưới.</p>
         </div>
-        <form id="contactForm">
+      <form id="contactForm" onsubmit="submitForm(event)">
             <label for="fullName">Họ và tên:</label>
             <input type="text" id="fullName" name="fullName" required>
 
@@ -724,11 +724,10 @@ function submitRegisterForm() {
 }
 
 function submitForm(event) {
-  event.preventDefault();
-  alert("Form đã được gửi!"); 
-  document.getElementById("contactForm").style.display = "none";
+    event.preventDefault();
+    alert("Form đã được gửi!");
+    document.getElementById("contactForm").style.display = "none";
 }
-
 function openModal() {
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
