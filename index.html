@@ -4,229 +4,231 @@
     <meta charset="UTF-8">
     <title>Trang chủ</title>
     <style>
-         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f2f2f2;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-            border: 2px outset #333;
-            padding: 0px;
-            
-        }
-
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 20%;
-            height: 100%;
-            background-color: #333;
-            transform: skewX(-45deg);
-            z-index: -1;
-        }
-
-        .container::after {
-            content: "";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 100%;
-            height: 20px;
-            background-color: #333;
-            transform: skewY(-45deg);
-            z-index: -1;
-        }
-
-        .container > * {
-            padding: 40px;
-        }
-
-       
-
-        
-
-        .container a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .container a:hover {
-            background-color: #555;
-        }
-
-        .container .button {
-    display: inline-block;
-    padding: 15px 30px; 
-    background-color: #555;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 20px; 
+         * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-        .container .button:hover {
-            background-color: #777;
-        }
-        .container {
-    color: blue; 
-    font-family: "Arial", sans-serif; 
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
 }
 
-.container h1 {
-    color: red; 
-    font-size: 60px; 
-}
-
-.container p {
-            font-size: 35px;
-            color:aqua;
-            
-        }
-
-        .box {
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 600%; 
-    height: auto;
-    max-width: 800px; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-
-
-        .box:nth-child(odd) {
-            background-color: #eaeaea;
-        }
-        .box .text {
-    color: blue; 
-    font-size: 20px; 
-}
-
-       
-
-        .box p {
-            color: #888;
-            margin-top: 10px;
-        }
-
-     
-
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            .container > * {
-                padding: 20px;
-            }
-
-            .container h1 {
-                font-size: 35px;
-                color: #555;
-            }
-
-            .container p {
-                font-size: 14px;
-                color:red ;
-            }
-        }
-        .tab {
-
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  overflow-x: auto;
-}
-
-
-.tab a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 15px 20px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-
-.tab a:hover {
-  background-color: #ddd;
-}
-
-
-.tab a.active {
-  background-color: #ccc;
-}
-
-.tabcontent {
-    position: relative;
-    z-index: 2;
-    width: calc(100% - 60px);
-    display: none;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-top: none;
+.container {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-
-.center-menu a {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  background-color: lightgray;
-  margin-right: 10px;
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
 
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
 
-.tab button {
-    background-color: inherit;
-    float: left;
+/* Navigation */
+.navbar {
+    background-color:aquamarine;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.highlight {
+    color: #ffd700;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.btn:hover {
+    background-color: #ffeb3b;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    border-radius: 50%;
+    width: 300px;
+}
+
+/* Skills Section */
+.skills {
+    padding: 100px 0;
+}
+
+.skills-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.skills-content .skill {
+    margin-right: 20px; /* Thêm khoảng cách bên phải cho mỗi cột kỹ năng */
+}
+
+.skills-content .skill:last-child {
+    margin-right: 0; /* Loại bỏ khoảng cách bên phải của cột cuối cùng */
+}
+.skill {
+    flex: 1;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.skill i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.skill h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 100px 0;
+}
+
+.portfolio-item {
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.portfolio-item img {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.portfolio-item p {
+    color: #555;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f9f9f9;
+    padding: 100px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #333;
     border: none;
-    outline: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
     cursor: pointer;
-    padding: 5px 10px; 
-    transition: 0.3s;
 }
-.tablinks {
-  font-size: 40px;
-  color:green; 
-  display: flex;
-  justify-content: center;
+
+.contact-form button:hover {
+    background-color: #ffeb3b;
 }
-.tab {
-  display: flex;
-  justify-content: center;
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
     
 .implementation-buttons button {
@@ -241,7 +243,7 @@
             transition: background-color 0.3s;
             cursor: pointer;
             text-align: center;
-            width: 200px;
+            width: 170px;
         }
 
         
@@ -255,129 +257,145 @@
             padding: 20px;
             
         }
+      
     </style>
 </head>
 <body>
   <header>
     <div class="implementation-buttons">
-      <button onclick="openLink('index.html')">Lab3 và Lab4</button>
-        <button onclick="openLink('lab5.html')">Lab5</button>
+      <button onclick="openLink('index.html')">Trang chủ</button>
+      
+      <button onclick="openLink('about.html')">About</button>
+      <button onclick="openLink('lab4.html')">Lab4</button>
+        <button onclick="openLink('lab5a.html')">Lab5</button>
         <button onclick="openLink('lab6.html')">Lab6</button>
         
-        <button onclick="openLink('lab7.html')">Lab7</button>
-        <button onclick="openLink('lab8.html')">Lab8</button>
+        <button onclick="openLink('lab7a.html')">Lab7</button>
+        <button onclick="openLink('lab8a.html')">Lab8</button>
+        <button onclick="openLink('https://phanxuanlanh22130142.github.io/projectGroup18/result2.html')">Result</button>
         
       
      
 
     </div>
 </header>
-    <div class="container">
-        <h1>Chào mừng đến với Web cá nhân của mình !</h1>
-        <p>
-            Đây là một trang web đơn giản được xây </br>dựng bởi mình với mục đích giới thiệu cho mọi </br>người biết nhiều hơn về mình 
-        </p>
-        <a>
-        <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'menu')">Menu</button>
-            
-          </div>
-          
-          <div id="menu" class="tabcontent">
-            <div class="tab">
-              <button class="tablinks" onclick="openNestedTab(event, 'requirement')">Requirement</button>
-              <button class="tablinks" onclick="openNestedTab(event, 'design')">Design</button>
-              <button class="tablinks" onclick="redirectToImplement()(event, 'implement')">Implement</button>
-              
-            </div>
-          </div>
-          <div class="center-content">
-            <div id="requirement" class="tabcontent">
-              <h3>Requirement</h3>
-              <p>Yêu cầu: Chọn 1 đối tượng bất kỳ trong thế giới thực, ví dụ như lớp môn học, giảng viên,…</br>
-                 Sau đó thiết kế chức năng Quản lý đối tượng đó trên html bao gồm các </br>
-                 tính năng thêm, sửa, xóa, tìm kiếm cho đối tượng đó. Ví dụ, làm chức năng Quản lý Sinh viên,</br> 
-                 bao gôm tính năng thêm, sửa, xóa, tìm kiếm. Chú ý: Các thành viên trong lớp, trong nhóm</br> 
-                 không được chọn các đối tượng giống nhau. </p>
-            </div>
-          
-            <div id="design" class="tabcontent">
-              <h3>Design</h3>
-              <div class="box">
-                <img src="images/A1.jpg" alt="Hình ảnh 1">
-                <a href="images/A1.jpg" download="images/A1.jpg">Download</a>
-              </div>
-              
-              <div class="box">
-                <img src="images/B.jpg" alt="Image 2">
-                <a href="images/B.jpg" download="images/B.jpg">Download</a>
-              </div>
-              
-  <a href="https://www.figma.com/file/4JfWcHvvYG22ct4YmXdWVw/Untitled?type=design&node-id=0%3A1&mode=design&t=LuNTVrpJuxCjmmyM-1">Go To FigMa</a>
-            </div>
-           
-            
-          </div></p>
-          
-        </a>
-        
-        <div class="image">
-            <div class="box">
-                <a href="https://www.facebook.com/xuanlanh.phan.311">Link đến Facebook</a>
-                <img class="image" src="images/fb.png" alt="Hình ảnh 1">
-                <div class="text">
-                <p>Đầu tiên là Facebook chắc không còn xa lạ gì với mọi người bởi đây chình là một trong</br>
-                     những mạng xã hội được nhiều người sử dụng nhất, nó có thể cho ta chia sẻ những cảm</br>
-                      xúc những khoảng khắc vui tươi hay buồn của mình cho mọi
-                    người để chúng ta có</br>
-                     thể thấu hiểu nhau hơn</p>
-                    </div>
-            </div>
-        
-            <div class="box">
-                <a href="mailto:22130142@st.hcmuaf.edu.vn">Link đến Gmail</a>
-                <img class="image" src="images/gm.png" alt="Hình ảnh 2">
-                <div class="text">
-                <p>Gmail, dịch vụ email của Google, mang đến cho người dùng một cách tiện lợi và nhanh chóng để</br>
-                     gửi và nhận email. Với giao diện đơn giản và dễ sử dụng, bạn có thể tận hưởng các tính năng bảo</br>
-                      mật mạnh mẽ, dung lượng lưu trữ lớn và tích hợp với các dịch vụ Google khác. Gmail là người bạn </br>
-                      đáng tin cậy để giữ liên lạc và quản lý thông điệp của bạn một cách hiệu quả.</p>
-                    </div>
-            </div>
-            <div class="box">
-                <a href="zalo https://zalo.me/g/tfheeq879">Link đến Zalo</a>
-                <img class="image" src="images/zalo.png" alt="Hình ảnh 3">
-                <div class="text">
-                <p>Zalo - Ứng dụng nhắn tin và gọi điện miễn phí hàng đầu, kết nối và trò chuyện dễ dàng với bạn bè và gia</br> 
-                    đình qua tin nhắn, hình ảnh và cuộc gọi video. Cùng tích hợp nhiều tính năng tiện lợi như gửi tiền, gọi xe</br>
-                     và đăng bài. Zalo là người bạn đồng hành không thể thiếu trong việc giao tiếp và kết nối hàng ngày.</p>
-                    </div>
-            </div>
+<nav class="navbar">
+<div class="container">
+    <h1 class="logo"> Trang Web cá nhân </h1>
+    <ul class="nav-menu">
+        <li><a href="#about">Giới Thiệu</a></li>
+        <li><a href="#skills">Kỹ Năng</a></li>
+        <li><a href="#portfolio">Dự Án</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
+    </ul>
+</div>
+</nav>
 
+<!-- Hero Section -->
+
+
+<!-- About Section -->
+<section id="about" class="about">
+<div class="container">
+    <h2 class="section-title">Giới Thiệu</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <h3>Xin Chào!</h3>
+            <p>"Xin chào! Tôi là một người có tính cách hiền lành và dễ mến, luôn cởi mở và sẵn lòng kết bạn.</br>
+               Tôi tự nhận mình là một người khá siêng năng, luôn nỗ lực và không ngừng hoàn thiện bản thân.</br>
+                Ngoài ra, tôi đam mê đọc tiểu thuyết và thường xuyên tìm kiếm những tác phẩm để cảm nhận và trích dẫn trong cuộc sống hàng ngày của mình.</br>
+                 Sở thích này không chỉ giúp tôi thư giãn mà còn mở rộng tầm hiểu biết và tư duy sáng tạo của mình. </br>
+                 Rất vui được gặp bạn!"</p>
         </div>
+        <div class="about-image">
+            <img src="images/jk.jpg" alt="Profile Picture">
+        </div>
+    </div>
+</div>
+</section>
 
-        <a href="#">Xem thêm</a>
+<!-- Skills Section -->
+<section id="skills" class="skills">
+  <div class="container">
+      <h2 class="section-title">Kỹ Năng</h2>
+      <div class="skills-content">
+          <div class="skill">
+              <i class="fas fa-code"></i>
+              <h3>Lập Trình</h3>
+              <p>"Trình độ lập trình của tôi đang ở giai đoạn mới tiếp cận, và tôi đang trong quá trình học hỏi và phát triển. </br>
+                Tôi có đam mê và sự quyết tâm để nắm vững các ngôn ngữ lập trình và khám phá sâu hơn về lập trình phần mềm. </br>
+                Tôi luôn tìm kiếm cơ hội để áp dụng những kiến thức mới của mình vào thực tế và từ đó nâng cao kỹ năng của mình lên một tầm cao mới."</p>
+          </div>
+          <div class="skill">
+              <i class="fas fa-pencil-alt"></i>
+              <h3>Thiết Kế</h3>
+              <p>"Tôi tự tin với khả năng thiết kế của mình và cảm thấy tự hào về những gì mình đã đạt được.</br>
+                 Tuy nhiên, tôi luôn ham muốn học hỏi thêm kinh nghiệm và mở rộng kiến thức của mình trong lĩnh vực này.</br>
+                 Tôi không ngừng tìm kiếm cơ hội để thử thách bản thân và phát triển kỹ năng thiết kế của mình đến mức cao mới."</p>
+          </div>
+          <!-- Add more skills if needed -->
+      </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio">
+<div class="container">
+    <h2 class="section-title">Dự Án</h2>
+    <p class="section-subtitle">Dưới đây là một số dự án của tôi</p>
+    <!-- Add your portfolio items here -->
+    <div class="portfolio-items">
+        <div class="portfolio-item">
+            <img src="images/mt.jfif" alt="Project 1">
+            <h3>Chắp cánh ước mơ về một môi trường xanh sạch đẹp</h3>
+            <p>Dự án "Chắp cánh ước mơ về một môi trường xanh sạch đẹp" là một nỗ lực hướng tới việc xây dựng một môi trường sống và làm việc trong lành, thân thiện với môi trường.
+
+            </br> Chúng tôi tập trung vào các hoạt động bảo vệ môi trường, tái chế, sử dụng nguồn năng lượng tái tạo, và các biện pháp giảm ô nhiễm. </br> 
+              Mục tiêu của chúng tôi là tạo ra một cộng đồng sâu lắng và nhận thức về việc bảo vệ và phát triển môi trường xanh sạch và đẹp mắt cho tương lai.
+
+
+
+
+
+
+            </p>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/l8.jfif" alt="Project 2">
+            <h3>Hội người yêu động vật</h3>
+            <p>
+              Dự án "Hội Người Yêu Động Vật" là một nền tảng hoạt động cộng đồng nhằm tăng cường nhận thức và sự quan tâm đối với quyền lợi và phúc lợi của động vật.</br>
+               Chúng tôi tập trung vào việc tạo ra các chiến dịch, sự kiện và hoạt động giáo dục để thúc đẩy việc bảo vệ và chăm sóc động vật, cũng như xây dựng một cộng đồng đồng cảm và hỗ trợ cho những người yêu quý và quan tâm đến các loài động vật.</br> Mục tiêu của chúng tôi là tạo ra một môi trường thân thiện và có trách nhiệm đối với tất cả các loài động vật và khuyến khích hành động từ thiện và bảo vệ môi trường sống của chúng.</p>
+        </div>
+        <!-- Add more portfolio items if needed -->
+    </div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+<div class="container">
+    <h2 class="section-title">Liên Hệ</h2>
+    <p class="section-subtitle">Hãy liên hệ với tôi</p>
+    <form class="contact-form">
+        <input type="text" placeholder="Phan Xuân Lãnh">
+        <input type="email" placeholder="22130142@st.hcmuaf.edu.vn">
+        <textarea placeholder="Nội dung"></textarea>
+        <button type="submit" class="btn">Gửi</button>
+    </form>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+    <p>&copy; 2024 Trang Chủ. Tất cả quyền được bảo lưu.</p>
+</div>
+</footer>
         
         <script>
        
-       function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  document.getElementById(tabName).style.display = "block";
-}
-
-function openNestedTab(evt, nestedTabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  document.getElementById(nestedTabName).style.display = "block";
-}
-
+      
 function redirectToImplement() {
   window.location.href = "Implement.html";
 }
@@ -390,7 +408,7 @@ function openLink(link) {
     }
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
         </script>
-        <a href="#" class="button" onclick="redirectToAbout()">About</a>
+        
         
     </div>
 
