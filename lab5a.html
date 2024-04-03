@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        .implementation-buttons {
+            margin-bottom: 20px;
+        }
+        .implementation-buttons button {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: chartreuse;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            text-align: center;
+            width: 120px;
+        }
+        .implementation-buttons button:hover {
+            background-color: darkgreen;
+            cursor: pointer;
+        }
+        .menu {
+            background-color:aquamarine;
+            padding: 10px;
+            text-align: center;
+        }
+        .menu button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .content {
+            padding: 20px;
+            display: none; /* Ẩn nội dung khi trang được tải */
+        }
+        .hidden {
+            display: none;
+        }
+        .content h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .image-container {
+    text-align: center;
+}
+
+.box {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+}
+
+.box img {
+    max-width: 600px;
+    height: 300px;
+    display: block;
+}
+.box a,
+.content a {
+    display: inline-block;
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.box a:hover,
+.content a:hover {
+    background-color: darkgreen;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <header>
+       
+ 
+
+    <div class="implementation-buttons">
+        <button onclick="openLink('index.html')">Trang chủ</button>
+        <button onclick="redirectToAbout()">About</button>
+        <button onclick="openLink('lab4.html')">Lab4</button>
+        <button onclick="openLink('lab5a.html')">Lab5</button>
+        <button onclick="openLink('lab6.html')">Lab6</button>
+        <button onclick="openLink('lab7a.html')">Lab7</button>
+        <button onclick="openLink('lab8a.html')">Lab8</button>
+    </div>
+</header>
+    <div class="menu">
+        <button onclick="showContent('requirement')">Requirement</button>
+        <button onclick="showContent('design')">Design</button>
+        <button onclick="openLink('lab5.html')">Implement</button>
+    </div>
+
+    <div class="content" id="requirement">
+        <h2>Requirement</h2>
+        <p>Bài tập cá nhân: </br>
+            (1) Tạo ra một user scenario</br>
+            (2) Chọn 1 bước trong user scenario để thiết kế 1 form giao diện Web trên công cụ thiết kế đã chọn. Sau đó thiết kế trên Figma rồi chuyển sang html tương ứng cho thiết kế này.</br>
+            Upload lên github: trong file html có chèn hình ảnh của user scenario ở (1) và đường dẫn của file thiết kế ở (2).</p>
+    </div>
+
+    <div class="content hidden" id="design">
+        <h2>Design</h2>
+        <div class="image-container">
+            <div class="box">
+                <img src="images/b5.jpg" alt="Hình ảnh 1">
+                <a href="images/b5.jpg" download="images/b5.jpg">Download</a>
+            </div>
+            <div class="box">
+                <img src="images/hj.png" alt="Image 2">
+                <a href="images/hj.png" download="images/hj.png">Download</a>
+            </div>
+        </div>
+        <a href="https://www.figma.com/file/c8HOoInKg4nbUsX1JLrjMq/Website-v%E1%BB%81-m%C3%B4i-tr%C6%B0%E1%BB%9Dng?type=design&node-id=0%3A1&mode=design&t=W1HZjVzVCyRMr7GQ-1">Go To FigMa</a>
+    </div>
+
+    <script>
+        function showContent(tabName) {
+            var contents = document.getElementsByClassName("content");
+            for (var i = 0; i < contents.length; i++) {
+                if (contents[i].id === tabName) {
+                    contents[i].style.display = "block";
+                } else {
+                    contents[i].style.display = "none";
+                }
+            }
+        }
+
+        function redirectToImplement() {
+            window.location.href = "Implement.html";
+        }
+
+        function redirectToAbout() {
+            window.location.href = "about.html";
+        }
+
+        function openLink(link) {
+            window.location.href = link;
+        }
+    </script>
+</body>
+</html>
